@@ -3,44 +3,71 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Food Assistant — ร้านอาหารสำหรับทีม 8–12 คน (5 ย่าน)</title>
 <style>
-:root{--ink:#1b2b30;--teal:#1F4E5F;--teal2:#2c6e84;--gold:#c8922b;--bg:#f0f4f6;--card:#fff;--line:#dde6e9;}
-*{box-sizing:border-box}
-body{margin:0;font-family:-apple-system,'Segoe UI','Sarabun',Tahoma,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
-.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
-header.hero{background:linear-gradient(135deg,#1a4455,#2c6e84);color:#fff;padding:48px 0 40px}
-header.hero h1{margin:0 0 8px;font-size:28px;letter-spacing:.3px;font-weight:700}
-header.hero .tag{opacity:.9;font-size:15px;max-width:680px}
-.hmeta{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-.hmeta span{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);padding:6px 12px;border-radius:20px;font-size:13px}
-.hmeta a{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.32);padding:6px 12px;border-radius:20px;font-size:13px;color:#fff;text-decoration:none;font-weight:600}
-.hmeta a:hover{background:rgba(255,255,255,.22)}
-section{padding:32px 0;border-bottom:1px solid var(--line)}
-section:last-of-type{border-bottom:none}
-h2{font-size:20px;color:var(--teal);margin:0 0 4px;display:flex;align-items:center;gap:9px}
-h2 .n{background:var(--teal);color:#fff;width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
-.lead{color:#46606a;margin:4px 0 18px;font-size:15px}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
-.box h4{margin:0 0 8px;color:var(--teal2)}
+:root{
+  --ink:#1b2b30;--teal:#1F4E5F;--teal2:#2c6e84;--teal3:#3d8fa8;
+  --gold:#c8922b;--gold2:#e6a832;--bg:#eef2f5;--card:#fff;--line:#dde6e9;
+  --green:#1d7a4d;--orange:#b06a00;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,'Segoe UI','Sarabun',Tahoma,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65}
+.wrap{max-width:1100px;margin:0 auto;padding:0 22px}
 
-/* Live Clean Data */
-#livecd .cdbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:6px 0 14px}
+/* HERO */
+header.hero{background:linear-gradient(140deg,#122f3c 0%,#1F4E5F 50%,#2c7a94 100%);color:#fff;padding:52px 0 44px;position:relative;overflow:hidden}
+header.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:320px;height:320px;border-radius:50%;background:rgba(255,255,255,.04);pointer-events:none}
+header.hero h1{font-size:27px;font-weight:800;letter-spacing:.2px;margin-bottom:8px}
+header.hero .tag{font-size:14.5px;opacity:.85;max-width:620px}
+
+/* SECTIONS */
+section{padding:36px 0;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:none}
+h2{font-size:19px;font-weight:700;color:var(--teal);margin-bottom:6px;display:flex;align-items:center;gap:10px}
+h2 .n{background:var(--teal);color:#fff;width:27px;height:27px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;font-weight:700}
+.lead{color:#4d666f;font-size:14.5px;margin-bottom:20px}
+
+/* TOP 3 CARDS */
+.top3-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.t3card{background:var(--card);border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(31,78,95,.10);transition:.25s;border:1px solid rgba(31,78,95,.08)}
+.t3card:hover{transform:translateY(-4px);box-shadow:0 10px 32px rgba(31,78,95,.16)}
+.t3card.gold-card .t3head{background:linear-gradient(135deg,#b07a10,#e6a832)}
+.t3card.silver-card .t3head{background:linear-gradient(135deg,#5b7a88,#8aaab8)}
+.t3card.bronze-card .t3head{background:linear-gradient(135deg,#8a5c2a,#c8822b)}
+.t3head{padding:18px 20px 16px;color:#fff;position:relative}
+.t3rank{font-size:26px;margin-bottom:4px}
+.t3score{position:absolute;top:16px;right:18px;font-size:28px;font-weight:800;opacity:.95}
+.t3score small{font-size:12px;opacity:.75}
+.t3name{font-size:17px;font-weight:700;line-height:1.3;margin-bottom:3px}
+.t3sub{font-size:12px;opacity:.8}
+.t3body{padding:16px 20px 18px}
+.t3meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.t3tag{background:#eef6f9;color:var(--teal2);border:1px solid #cde3ec;padding:3px 9px;border-radius:12px;font-size:12px;font-weight:600}
+.t3why{background:#f8fbfd;border-left:3px solid var(--teal2);border-radius:0 8px 8px 0;padding:10px 12px;margin-bottom:12px}
+.t3why-title{font-size:11px;font-weight:700;color:var(--teal2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.t3why ul{padding-left:14px;list-style:none}
+.t3why ul li{font-size:13px;color:#3c565e;margin-bottom:3px;padding-left:2px}
+.t3why ul li::before{content:'✓ ';color:var(--green);font-weight:700}
+.t3links{display:flex;gap:7px;flex-wrap:wrap}
+.t3links a{font-size:12px;color:var(--teal2);text-decoration:none;border:1px solid var(--line);padding:5px 11px;border-radius:8px;transition:.15s;font-weight:500}
+.t3links a:hover{background:var(--teal);color:#fff;border-color:var(--teal)}
+
+/* LIVE DATA TABLE */
+#livecd .cdbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
 #livecd .chips{display:flex;flex-wrap:wrap;gap:6px}
 #livecd .chip{border:1px solid var(--line);background:var(--card);color:var(--teal);padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-family:inherit;transition:.15s}
 #livecd .chip.active{background:var(--teal);color:#fff;border-color:var(--teal)}
 #livecd .chip:hover:not(.active){background:#eef4f7}
-#livecd #cdsearch{border:1px solid var(--line);border-radius:8px;padding:7px 12px;font-size:13px;min-width:160px;font-family:inherit;outline:none}
+#livecd #cdsearch{border:1px solid var(--line);border-radius:8px;padding:7px 12px;font-size:13px;min-width:160px;font-family:inherit;outline:none;background:var(--card)}
 #livecd #cdsearch:focus{border-color:var(--teal2)}
-#livecd .refresh{margin-left:auto;background:var(--gold);color:#fff;border:none;padding:8px 18px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:.15s}
-#livecd .refresh:hover{background:#b07a1e}
+#livecd .refresh{background:var(--teal);color:#fff;border:none;padding:8px 18px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:.15s}
+#livecd .refresh:hover{background:var(--teal2)}
 #livecd .refresh:active{transform:translateY(1px)}
-#livecd .cdstatus{font-size:12px;color:#5b757e;margin-bottom:8px}
-#livecd table{width:100%;border-collapse:collapse;background:var(--card);font-size:13px;border-radius:10px;overflow:hidden;box-shadow:0 1px 6px rgba(31,78,95,.07)}
-#livecd th{background:var(--teal);color:#fff;padding:10px 8px;text-align:left;font-size:12px;cursor:pointer;white-space:nowrap;user-select:none}
+#livecd .cdstatus{font-size:12px;color:#7b929a;margin-bottom:8px}
+#livecd table{width:100%;border-collapse:collapse;background:var(--card);font-size:13px;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(31,78,95,.07)}
+#livecd th{background:var(--teal);color:#fff;padding:10px 8px;text-align:left;font-size:12px;cursor:pointer;white-space:nowrap;user-select:none;font-weight:600}
 #livecd th:hover{background:var(--teal2)}
 #livecd td{padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}
 #livecd tr:last-child td{border-bottom:none}
-#livecd tr:hover td{background:#f7fbfc}
+#livecd tr:hover td{background:#f5fafb}
 #livecd .ce{text-align:center}
 #livecd .pill{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600}
 #livecd .hi{background:#e3f3ea;color:#1d7a4d}
@@ -48,8 +75,9 @@ h2 .n{background:var(--teal);color:#fff;width:26px;height:26px;border-radius:50%
 #livecd .tier{font-weight:700;color:var(--gold)}
 #livecd .cnt{font-weight:700;color:var(--teal)}
 
-/* Tables */
-table{width:100%;border-collapse:collapse;background:var(--card);font-size:13px;border-radius:10px;overflow:hidden;box-shadow:0 1px 6px rgba(31,78,95,.07)}
+/* TOP10 TABLE */
+.scroll{overflow-x:auto;border-radius:12px}
+table{width:100%;border-collapse:collapse;background:var(--card);font-size:13px;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(31,78,95,.07)}
 th{background:var(--teal);color:#fff;padding:10px 8px;text-align:left;font-weight:600;font-size:12px}
 td{padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}
 td.ce,th.ce{text-align:center}
@@ -59,47 +87,31 @@ td.ce,th.ce{text-align:center}
 .nm{min-width:150px}
 .rs{color:#42606a;font-size:12px;min-width:170px}
 tr.top3row{background:#fffbf0}
-tr.top3row:hover td{background:#fff6e0}
-.scroll{overflow-x:auto;border-radius:10px}
+tr.top3row:hover td{background:#fff5e0}
+tr:not(.top3row):hover td{background:#f5fafb}
 
-/* Scoring weights */
-.weights{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.wt{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;text-align:center;border-top:3px solid var(--teal)}
-.wt .p{font-size:26px;font-weight:800;color:var(--teal);line-height:1}
-.wt .l{font-size:12px;color:#5b757e;margin-top:6px}
-
-/* Cards Top 3 */
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 3px 14px rgba(31,78,95,.07);border-top:4px solid var(--gold);transition:.2s}
-.card:hover{box-shadow:0 6px 22px rgba(31,78,95,.12);transform:translateY(-2px)}
-.cardtop{display:flex;justify-content:space-between;align-items:center}
-.badge{background:var(--teal);color:#fff;padding:4px 10px;border-radius:14px;font-size:12px;font-weight:600}
-.score{font-size:28px;font-weight:800;color:var(--gold)}.score small{font-size:13px;color:#9aa}
-.card h3{margin:12px 0 2px;font-size:17px;color:var(--ink)}
-.meta{color:#5b757e;font-size:13px}
-.stars{margin:8px 0;font-size:13px;color:var(--ink)}.stars span{color:#7b929a}
-.why{font-size:13px;color:#3c565e;line-height:1.55;margin:8px 0}
-.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-.links a{font-size:12px;color:var(--teal2);text-decoration:none;border:1px solid var(--line);padding:5px 10px;border-radius:8px;transition:.15s}
-.links a:hover{background:var(--teal);color:#fff;border-color:var(--teal)}
-
-/* Compare table */
-.good{color:#1d7a4d}.warn{color:#b06a00}
+/* COMPARE */
+.good{color:var(--green)}.warn{color:var(--orange)}
 .crit td:first-child{font-weight:600}
 
-.note{background:#fff7e8;border:1px solid #f0d9a8;border-radius:10px;padding:12px 16px;font-size:13px;color:#7a5b16;margin-top:12px}
-ul{margin:6px 0 0;padding-left:20px}li{margin:3px 0}
-footer{padding:28px 0;color:#6a838b;font-size:13px;text-align:center;background:var(--card);border-top:1px solid var(--line);margin-top:12px}
-@media(max-width:820px){
-  .grid2{grid-template-columns:1fr}
-  .cards{grid-template-columns:1fr}
+/* SCORING */
+.weights{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.wt{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 14px;text-align:center;border-top:3px solid var(--teal);box-shadow:0 1px 6px rgba(31,78,95,.05)}
+.wt .p{font-size:28px;font-weight:800;color:var(--teal);line-height:1}
+.wt .l{font-size:12px;color:#5b757e;margin-top:7px;line-height:1.4}
+
+footer{padding:28px 0;color:#7a919a;font-size:13px;text-align:center;background:var(--card);border-top:1px solid var(--line);margin-top:16px}
+
+@media(max-width:860px){
+  .top3-grid{grid-template-columns:1fr}
   .weights{grid-template-columns:repeat(2,1fr)}
-  header.hero h1{font-size:22px}
-  #livecd .refresh{margin-left:0}
+  header.hero h1{font-size:21px}
+  #livecd .refresh{width:100%}
 }
 @media(max-width:480px){.weights{grid-template-columns:1fr 1fr}}
 </style></head>
 <body>
+
 <header class="hero"><div class="wrap">
 <h1>🍽️ AI Food Assistant — เลือกร้านอาหารสำหรับทีม 8–12 คน</h1>
 <div class="tag">จัดอันดับ วิเคราะห์ และแนะนำร้านอาหารใน 5 ย่านยอดนิยมของกรุงเทพฯ ด้วยข้อมูลรีวิวจริง</div>
@@ -107,7 +119,103 @@ footer{padding:28px 0;color:#6a838b;font-size:13px;text-align:center;background:
 
 <div class="wrap">
 
-<!-- ★ LIVE CLEAN DATA -->
+<!-- TOP 3 (อันดับแรก) -->
+<section>
+<h2><span class="n">🏆</span>แนะนำ Top 3 — ร้านที่ดีที่สุดสำหรับทีม</h2>
+<p class="lead">3 ร้านที่ผ่านเกณฑ์ทุกด้าน — เรตติ้ง · ราคา · ความเหมาะกับกลุ่ม · ความสะดวกเดินทาง</p>
+<div class="top3-grid">
+
+<div class="t3card gold-card">
+  <div class="t3head">
+    <div class="t3rank">🥇</div>
+    <div class="t3score">91.6<small>/100</small></div>
+    <div class="t3name">KORATA (Siam Square)</div>
+    <div class="t3sub">Siam · Thai (Korat / Isaan)</div>
+  </div>
+  <div class="t3body">
+    <div class="t3meta">
+      <span class="t3tag">4.9★ · 2,537 รีวิว</span>
+      <span class="t3tag">$$ ~400฿/คน</span>
+      <span class="t3tag">BTS Siam ~189 ม.</span>
+    </div>
+    <div class="t3why">
+      <div class="t3why-title">ทำไมถึงติด Top 3</div>
+      <ul>
+        <li>เรตติ้งสูงสุดในกลุ่ม 4.9★ จาก 2,537+ รีวิว</li>
+        <li>เมนูอีสาน/โคราช — แชร์โต๊ะได้ เหมาะกลุ่ม 8–12</li>
+        <li>ราคาดีที่สุดในย่านสยาม ~400฿/คน</li>
+        <li>เดิน 189 ม. จาก BTS Siam สะดวกทุกสาย</li>
+      </ul>
+    </div>
+    <div class="t3links">
+      <a href="https://www.google.com/maps/search/?api=1&query=&query_place_id=ChIJ0xYxXwCf4jARPtJNOp_WXm8" target="_blank">Google Maps ↗</a>
+      <a href="https://openlink.co/korata_th" target="_blank">Website ↗</a>
+    </div>
+  </div>
+</div>
+
+<div class="t3card silver-card">
+  <div class="t3head">
+    <div class="t3rank">🥈</div>
+    <div class="t3score">88.7<small>/100</small></div>
+    <div class="t3name">White Flower Factory</div>
+    <div class="t3sub">Siam · Thai / fusion</div>
+  </div>
+  <div class="t3body">
+    <div class="t3meta">
+      <span class="t3tag">4.6★ · 1,521 รีวิว</span>
+      <span class="t3tag">$$ ~500฿/คน</span>
+      <span class="t3tag">BTS Siam ~50 ม.</span>
+    </div>
+    <div class="t3why">
+      <div class="t3why-title">ทำไมถึงติด Top 3</div>
+      <ul>
+        <li>ใกล้ BTS Siam แค่ 50 ม. — เข้าถึงง่ายที่สุด</li>
+        <li>Thai fusion เมนูหลากหลาย ตอบโจทย์ทีมผสม</li>
+        <li>ราคาสมดุล ~500฿/คน ไม่แพงเกินไป</li>
+        <li>ข้อมูลครบ มีรีวิวยืนยัน 1,500+ รายการ</li>
+      </ul>
+    </div>
+    <div class="t3links">
+      <a href="https://www.google.com/maps/search/?api=1&query=&query_place_id=ChIJ937RdtKe4jARPRuzBAQLNxc" target="_blank">Google Maps ↗</a>
+      <a href="https://lin.ee/apXJZm3" target="_blank">Website ↗</a>
+    </div>
+  </div>
+</div>
+
+<div class="t3card bronze-card">
+  <div class="t3head">
+    <div class="t3rank">🥉</div>
+    <div class="t3score">88.6<small>/100</small></div>
+    <div class="t3name">Kopihub Prime (Ari)</div>
+    <div class="t3sub">Ari · Dim sum / Asian</div>
+  </div>
+  <div class="t3body">
+    <div class="t3meta">
+      <span class="t3tag">4.8★ · 3,430 รีวิว</span>
+      <span class="t3tag">$ ~300฿/คน</span>
+      <span class="t3tag">BTS Ari ~139 ม.</span>
+    </div>
+    <div class="t3why">
+      <div class="t3why-title">ทำไมถึงติด Top 3</div>
+      <ul>
+        <li>ฐานรีวิวใหญ่ที่สุด 3,430 รายการ — น่าเชื่อถือสูง</li>
+        <li>Dim sum แชร์ได้ทุกจาน เหมาะกลุ่มใหญ่มาก</li>
+        <li>ราคาประหยัดสุด ~300฿/คน คุมงบง่ายที่สุด</li>
+        <li>ติด BTS Ari 139 ม. ย่านเงียบสบาย</li>
+      </ul>
+    </div>
+    <div class="t3links">
+      <a href="https://www.google.com/maps/search/?api=1&query=&query_place_id=ChIJgdqs_tuf4jARl5VCETZn0do" target="_blank">Google Maps ↗</a>
+      <a href="https://kopihub.co/" target="_blank">Website ↗</a>
+    </div>
+  </div>
+</div>
+
+</div>
+</section>
+
+<!-- LIVE DATA -->
 <section id="livecd">
 <h2><span class="n">★</span>ข้อมูลร้านอาหารในกรุงเทพ</h2>
 <div class="cdbar">
@@ -122,22 +230,19 @@ footer{padding:28px 0;color:#6a838b;font-size:13px;text-align:center;background:
 <input id="cdsearch" placeholder="🔍 ค้นหาชื่อร้าน...">
 <button id="cdrefresh" class="refresh">🔄 อัปเดตข้อมูล</button>
 </div>
-<div class="cdstatus" id="cdstatus">กำลังโหลด…</div>
+<div class="cdstatus" id="cdstatus"></div>
 <div class="scroll"><table id="cdtable"><thead><tr>
 <th data-k="Restaurant Name">ร้าน</th><th data-k="Area">ย่าน</th><th data-k="Cuisine (normalized)">ประเภท</th>
 <th class="ce" data-k="Rating">เรตติ้ง</th><th class="ce" data-k="Reviews">รีวิว</th><th class="ce" data-k="Price Tier">ราคา</th>
 <th class="ce" data-k="THB/person">฿/คน</th><th data-k="Station">สถานี</th><th class="ce" data-k="Walk (m)">เดิน(ม.)</th>
 <th data-k="Group-friendly?">กลุ่ม</th><th data-k="Best for">เหมาะกับ</th>
 </tr></thead><tbody id="cdbody"></tbody></table></div>
-<p style="font-size:12px;color:#7b929a;margin-top:8px">ดึงจากแท็บ <a href="https://docs.google.com/spreadsheets/d/1bjHgykphkx1DZ_AHeY6IeI58eK4SP6BLKtajnX5T4I8/edit#gid=1864807919" target="_blank" style="color:var(--teal2)">Clean Data ↗</a> — ตั้งการแชร์ชีตเป็น <b>Anyone with the link: Viewer</b> เพื่อดึงสดได้</p>
 </section>
 
 <script>
 (function(){
- var SHEET_ID="1bjHgykphkx1DZ_AHeY6IeI58eK4SP6BLKtajnX5T4I8", GID="1864807919";
- var GVIZ="https://docs.google.com/spreadsheets/d/"+SHEET_ID+"/gviz/tq?tqx=out:json&gid="+GID;
- var FALLBACK=[{"Restaurant Name": "KORATA (Siam Square)", "Area": "Siam", "Cuisine (normalized)": "Thai (Korat / Isaan)", "Rating": 4.9, "Reviews": 2537, "Price Tier": "$$", "THB/person": 400, "Station": "BTS Siam", "Walk (m)": 189, "Group-friendly?": "High", "Best for": "Standard after-work team dinner"}, {"Restaurant Name": "White Flower Factory (Siam Square)", "Area": "Siam", "Cuisine (normalized)": "Thai / fusion", "Rating": 4.6, "Reviews": 1521, "Price Tier": "$$", "THB/person": 500, "Station": "BTS Siam", "Walk (m)": 50, "Group-friendly?": "High", "Best for": "Standard after-work team dinner"}, {"Restaurant Name": "Kopihub Prime (Ari)", "Area": "Ari", "Cuisine (normalized)": "Dim sum / Asian", "Rating": 4.8, "Reviews": 3430, "Price Tier": "$", "THB/person": 300, "Station": "BTS Ari", "Walk (m)": 139, "Group-friendly?": "High", "Best for": "Budget casual team meal"}, {"Restaurant Name": "Indulge Restaurant & Cocktail Bar", "Area": "Asoke", "Cuisine (normalized)": "Thai / fusion / cocktail", "Rating": 4.7, "Reviews": 3693, "Price Tier": "$$$", "THB/person": 900, "Station": "BTS/MRT Asok", "Walk (m)": 269, "Group-friendly?": "High", "Best for": "Standard after-work team dinner"}, {"Restaurant Name": "Lucca Thonglor (rooftop)", "Area": "Thonglor", "Cuisine (normalized)": "Mediterranean / rooftop / brunch", "Rating": 4.9, "Reviews": 831, "Price Tier": "$$", "THB/person": 400, "Station": "BTS Thong Lo", "Walk (m)": 942, "Group-friendly?": "High", "Best for": "Standard after-work team dinner"}, {"Restaurant Name": "Kenny's BKK (Ari)", "Area": "Ari", "Cuisine (normalized)": "American / pizza", "Rating": 4.7, "Reviews": 1240, "Price Tier": "$$", "THB/person": 500, "Station": "BTS Ari", "Walk (m)": 448, "Group-friendly?": "High", "Best for": "Standard after-work team dinner"}, {"Restaurant Name": "Nara Thai Cuisine (Terminal 21)", "Area": "Asoke", "Cuisine (normalized)": "Thai", "Rating": 4.7, "Reviews": 1135, "Price Tier": "$$$", "THB/person": 800, "Station": "BTS/MRT Asok", "Walk (m)": 184, "Group-friendly?": "High", "Best for": "Standard after-work team dinner"}, {"Restaurant Name": "Gigi Eatery Asoke", "Area": "Asoke", "Cuisine (normalized)": "Italian / brunch", "Rating": 4.8, "Reviews": 3341, "Price Tier": "$$$", "THB/person": 900, "Station": "BTS/MRT Asok", "Walk (m)": 401, "Group-friendly?": "High", "Best for": "Standard after-work team dinner"}, {"Restaurant Name": "Lay Lao", "Area": "Ari", "Cuisine (normalized)": "Thai / Isaan seafood", "Rating": 4.5, "Reviews": 2458, "Price Tier": "$$", "THB/person": 500, "Station": "BTS Ari", "Walk (m)": 376, "Group-friendly?": "High", "Best for": "Standard after-work team dinner"}, {"Restaurant Name": "Sunrise Tacos Mexican Grill", "Area": "Asoke", "Cuisine (normalized)": "Mexican", "Rating": 4.7, "Reviews": 5004, "Price Tier": "$", "THB/person": 300, "Station": "BTS/MRT Asok", "Walk (m)": 188, "Group-friendly?": "High", "Best for": "Budget casual team meal"}, {"Restaurant Name": "Tiew Copper Craft (Siam Paragon)", "Area": "Siam", "Cuisine (normalized)": "Thai (boat noodles/grill)", "Rating": 4.8, "Reviews": 1011, "Price Tier": "$", "THB/person": 300, "Station": "BTS Siam", "Walk (m)": 275, "Group-friendly?": "Medium", "Best for": "Budget casual team meal"}, {"Restaurant Name": "Katsuya (Siam Square One)", "Area": "Siam", "Cuisine (normalized)": "Japanese (tonkatsu)", "Rating": 4.9, "Reviews": 1059, "Price Tier": "$", "THB/person": 300, "Station": "BTS Siam", "Walk (m)": 61, "Group-friendly?": "Medium", "Best for": "Budget casual team meal"}, {"Restaurant Name": "Khao Piyo (Indian)", "Area": "Phrom Phong", "Cuisine (normalized)": "Indian", "Rating": 4.8, "Reviews": 1116, "Price Tier": "$$", "THB/person": 400, "Station": "MRT Queen Sirikit", "Walk (m)": 710, "Group-friendly?": "High", "Best for": "Standard after-work team dinner"}, {"Restaurant Name": "Jim Thompson, A Thai Restaurant", "Area": "Siam", "Cuisine (normalized)": "Thai (fine dining)", "Rating": 4.8, "Reviews": 3628, "Price Tier": "$$$$", "THB/person": 1500, "Station": "BTS National Stadium", "Walk (m)": 390, "Group-friendly?": "High", "Best for": "Special / celebration team dinner"}, {"Restaurant Name": "Krua Jiang Mai", "Area": "Thonglor", "Cuisine (normalized)": "Northern Thai", "Rating": 4.8, "Reviews": 2750, "Price Tier": "$", "THB/person": 300, "Station": "BTS Thong Lo", "Walk (m)": 920, "Group-friendly?": "High", "Best for": "Budget casual team meal"}, {"Restaurant Name": "Madam Saranair", "Area": "Asoke", "Cuisine (normalized)": "Thai", "Rating": 4.5, "Reviews": 2189, "Price Tier": "$$", "THB/person": 600, "Station": "BTS/MRT Asok", "Walk (m)": 554, "Group-friendly?": "High", "Best for": "Standard after-work team dinner"}, {"Restaurant Name": "Kenny's BKK (Sukhumvit 31)", "Area": "Phrom Phong", "Cuisine (normalized)": "American / pizza", "Rating": 4.8, "Reviews": 1107, "Price Tier": "$$$", "THB/person": 700, "Station": "BTS/MRT Asok", "Walk (m)": 965, "Group-friendly?": "High", "Best for": "Standard after-work team dinner"}, {"Restaurant Name": "Cantina Italian Kitchen (Ari)", "Area": "Ari", "Cuisine (normalized)": "Italian / wine bar", "Rating": 4.6, "Reviews": 796, "Price Tier": "$$$", "THB/person": 1000, "Station": "BTS Ari", "Walk (m)": 514, "Group-friendly?": "Medium", "Best for": "Standard after-work team dinner"}, {"Restaurant Name": "Sri Trat Restaurant & Bar", "Area": "Phrom Phong", "Cuisine (normalized)": "Thai (Eastern)", "Rating": 4.5, "Reviews": 2546, "Price Tier": "$$$", "THB/person": 900, "Station": "BTS Phrom Phong", "Walk (m)": 946, "Group-friendly?": "High", "Best for": "Standard after-work team dinner"}, {"Restaurant Name": "Weaver Restaurant (rooftop)", "Area": "Phrom Phong", "Cuisine (normalized)": "Indian / Thai / Western (rooftop)", "Rating": 4.9, "Reviews": 421, "Price Tier": "$$$", "THB/person": 1000, "Station": "BTS Phrom Phong", "Walk (m)": 732, "Group-friendly?": "Medium", "Best for": "Standard after-work team dinner"}, {"Restaurant Name": "Sra Bua by Kiin Kiin", "Area": "Siam", "Cuisine (normalized)": "Modern Thai (fine dining)", "Rating": 4.7, "Reviews": 1076, "Price Tier": "$$$$", "THB/person": 2500, "Station": "BTS Siam", "Walk (m)": 460, "Group-friendly?": "Medium", "Best for": "Special / celebration team dinner"}, {"Restaurant Name": "Supanniga Eating Room", "Area": "Thonglor", "Cuisine (normalized)": "Thai (regional)", "Rating": 4.4, "Reviews": 1727, "Price Tier": "$$$", "THB/person": 1000, "Station": "BTS Thong Lo", "Walk (m)": 914, "Group-friendly?": "High", "Best for": "Standard after-work team dinner"}, {"Restaurant Name": "Peppina (Sukhumvit 33)", "Area": "Phrom Phong", "Cuisine (normalized)": "Italian / pizza", "Rating": 4.5, "Reviews": 2491, "Price Tier": "$$$", "THB/person": 900, "Station": "BTS/MRT Asok", "Walk (m)": 1042, "Group-friendly?": "High", "Best for": "Standard after-work team dinner"}, {"Restaurant Name": "Fuego (The Taste Thonglor)", "Area": "Thonglor", "Cuisine (normalized)": "Steakhouse / grill (fine)", "Rating": 4.8, "Reviews": 622, "Price Tier": "$$$$", "THB/person": 2500, "Station": "BTS Thong Lo", "Walk (m)": 1291, "Group-friendly?": "Medium", "Best for": "Special / celebration team dinner"}, {"Restaurant Name": "Khao Niao", "Area": "Ari", "Cuisine (normalized)": "Thai / Isaan", "Rating": 4.6, "Reviews": 295, "Price Tier": "$$", "THB/person": 500, "Station": "BTS Sanam Pao", "Walk (m)": 845, "Group-friendly?": "Medium", "Best for": "Standard after-work team dinner"}, {"Restaurant Name": "Chez Papa Bangkok", "Area": "Phrom Phong", "Cuisine (normalized)": "French / bistro", "Rating": 4.8, "Reviews": 538, "Price Tier": "$$$$", "THB/person": 1200, "Station": "BTS Phrom Phong", "Walk (m)": 977, "Group-friendly?": "Medium", "Best for": "Special / celebration team dinner"}, {"Restaurant Name": "Baan Pueng Chom", "Area": "Ari", "Cuisine (normalized)": "Thai (home-style)", "Rating": 4.2, "Reviews": 1625, "Price Tier": "$", "THB/person": 300, "Station": "BTS Ari", "Walk (m)": 515, "Group-friendly?": "High", "Best for": "Budget casual team meal"}, {"Restaurant Name": "Patara Fine Thai Cuisine", "Area": "Thonglor", "Cuisine (normalized)": "Thai (fine dining)", "Rating": 4.5, "Reviews": 656, "Price Tier": "$$$$", "THB/person": 1400, "Station": "BTS Phrom Phong", "Walk (m)": 1831, "Group-friendly?": "Medium", "Best for": "Special / celebration team dinner"}, {"Restaurant Name": "Rossano's Italian Cuisine", "Area": "Asoke", "Cuisine (normalized)": "Italian", "Rating": 4.5, "Reviews": 1137, "Price Tier": "$$$$", "THB/person": 1500, "Station": "BTS/MRT Asok", "Walk (m)": 826, "Group-friendly?": "Medium", "Best for": "Special / celebration team dinner"}, {"Restaurant Name": "Di Vino Bangkok", "Area": "Thonglor", "Cuisine (normalized)": "Italian / wine", "Rating": 4.7, "Reviews": 384, "Price Tier": "$$$$", "THB/person": 1300, "Station": "BTS Thong Lo", "Walk (m)": 1496, "Group-friendly?": "Medium", "Best for": "Special / celebration team dinner"}];
- var DATA=FALLBACK.slice(), area="", q="", sortK="Rating", sortDir=-1, live=false;
+ var FALLBACK=[{"Restaurant Name":"KORATA (Siam Square)","Area":"Siam","Cuisine (normalized)":"Thai (Korat / Isaan)","Rating":4.9,"Reviews":2537,"Price Tier":"$$","THB/person":400,"Station":"BTS Siam","Walk (m)":189,"Group-friendly?":"High","Best for":"Standard after-work team dinner"},{"Restaurant Name":"White Flower Factory (Siam Square)","Area":"Siam","Cuisine (normalized)":"Thai / fusion","Rating":4.6,"Reviews":1521,"Price Tier":"$$","THB/person":500,"Station":"BTS Siam","Walk (m)":50,"Group-friendly?":"High","Best for":"Standard after-work team dinner"},{"Restaurant Name":"Kopihub Prime (Ari)","Area":"Ari","Cuisine (normalized)":"Dim sum / Asian","Rating":4.8,"Reviews":3430,"Price Tier":"$","THB/person":300,"Station":"BTS Ari","Walk (m)":139,"Group-friendly?":"High","Best for":"Budget casual team meal"},{"Restaurant Name":"Indulge Restaurant & Cocktail Bar","Area":"Asoke","Cuisine (normalized)":"Thai / fusion / cocktail","Rating":4.7,"Reviews":3693,"Price Tier":"$$$","THB/person":900,"Station":"BTS/MRT Asok","Walk (m)":269,"Group-friendly?":"High","Best for":"Standard after-work team dinner"},{"Restaurant Name":"Lucca Thonglor (rooftop)","Area":"Thonglor","Cuisine (normalized)":"Mediterranean / rooftop / brunch","Rating":4.9,"Reviews":831,"Price Tier":"$$","THB/person":400,"Station":"BTS Thong Lo","Walk (m)":942,"Group-friendly?":"High","Best for":"Standard after-work team dinner"},{"Restaurant Name":"Kenny's BKK (Ari)","Area":"Ari","Cuisine (normalized)":"American / pizza","Rating":4.7,"Reviews":1240,"Price Tier":"$$","THB/person":500,"Station":"BTS Ari","Walk (m)":448,"Group-friendly?":"High","Best for":"Standard after-work team dinner"},{"Restaurant Name":"Nara Thai Cuisine (Terminal 21)","Area":"Asoke","Cuisine (normalized)":"Thai","Rating":4.7,"Reviews":1135,"Price Tier":"$$$","THB/person":800,"Station":"BTS/MRT Asok","Walk (m)":184,"Group-friendly?":"High","Best for":"Standard after-work team dinner"},{"Restaurant Name":"Gigi Eatery Asoke","Area":"Asoke","Cuisine (normalized)":"Italian / brunch","Rating":4.8,"Reviews":3341,"Price Tier":"$$$","THB/person":900,"Station":"BTS/MRT Asok","Walk (m)":401,"Group-friendly?":"High","Best for":"Standard after-work team dinner"},{"Restaurant Name":"Lay Lao","Area":"Ari","Cuisine (normalized)":"Thai / Isaan seafood","Rating":4.5,"Reviews":2458,"Price Tier":"$$","THB/person":500,"Station":"BTS Ari","Walk (m)":376,"Group-friendly?":"High","Best for":"Standard after-work team dinner"},{"Restaurant Name":"Sunrise Tacos Mexican Grill","Area":"Asoke","Cuisine (normalized)":"Mexican","Rating":4.7,"Reviews":5004,"Price Tier":"$","THB/person":300,"Station":"BTS/MRT Asok","Walk (m)":188,"Group-friendly?":"High","Best for":"Budget casual team meal"},{"Restaurant Name":"Tiew Copper Craft (Siam Paragon)","Area":"Siam","Cuisine (normalized)":"Thai (boat noodles/grill)","Rating":4.8,"Reviews":1011,"Price Tier":"$","THB/person":300,"Station":"BTS Siam","Walk (m)":275,"Group-friendly?":"Medium","Best for":"Budget casual team meal"},{"Restaurant Name":"Katsuya (Siam Square One)","Area":"Siam","Cuisine (normalized)":"Japanese (tonkatsu)","Rating":4.9,"Reviews":1059,"Price Tier":"$","THB/person":300,"Station":"BTS Siam","Walk (m)":61,"Group-friendly?":"Medium","Best for":"Budget casual team meal"},{"Restaurant Name":"Khao Piyo (Indian)","Area":"Phrom Phong","Cuisine (normalized)":"Indian","Rating":4.8,"Reviews":1116,"Price Tier":"$$","THB/person":400,"Station":"MRT Queen Sirikit","Walk (m)":710,"Group-friendly?":"High","Best for":"Standard after-work team dinner"},{"Restaurant Name":"Jim Thompson, A Thai Restaurant","Area":"Siam","Cuisine (normalized)":"Thai (fine dining)","Rating":4.8,"Reviews":3628,"Price Tier":"$$$$","THB/person":1500,"Station":"BTS National Stadium","Walk (m)":390,"Group-friendly?":"High","Best for":"Special / celebration team dinner"},{"Restaurant Name":"Krua Jiang Mai","Area":"Thonglor","Cuisine (normalized)":"Northern Thai","Rating":4.8,"Reviews":2750,"Price Tier":"$","THB/person":300,"Station":"BTS Thong Lo","Walk (m)":920,"Group-friendly?":"High","Best for":"Budget casual team meal"},{"Restaurant Name":"Madam Saranair","Area":"Asoke","Cuisine (normalized)":"Thai","Rating":4.5,"Reviews":2189,"Price Tier":"$$","THB/person":600,"Station":"BTS/MRT Asok","Walk (m)":554,"Group-friendly?":"High","Best for":"Standard after-work team dinner"},{"Restaurant Name":"Kenny's BKK (Sukhumvit 31)","Area":"Phrom Phong","Cuisine (normalized)":"American / pizza","Rating":4.8,"Reviews":1107,"Price Tier":"$$$","THB/person":700,"Station":"BTS/MRT Asok","Walk (m)":965,"Group-friendly?":"High","Best for":"Standard after-work team dinner"},{"Restaurant Name":"Cantina Italian Kitchen (Ari)","Area":"Ari","Cuisine (normalized)":"Italian / wine bar","Rating":4.6,"Reviews":796,"Price Tier":"$$$","THB/person":1000,"Station":"BTS Ari","Walk (m)":514,"Group-friendly?":"Medium","Best for":"Standard after-work team dinner"},{"Restaurant Name":"Sri Trat Restaurant & Bar","Area":"Phrom Phong","Cuisine (normalized)":"Thai (Eastern)","Rating":4.5,"Reviews":2546,"Price Tier":"$$$","THB/person":900,"Station":"BTS Phrom Phong","Walk (m)":946,"Group-friendly?":"High","Best for":"Standard after-work team dinner"},{"Restaurant Name":"Weaver Restaurant (rooftop)","Area":"Phrom Phong","Cuisine (normalized)":"Indian / Thai / Western (rooftop)","Rating":4.9,"Reviews":421,"Price Tier":"$$$","THB/person":1000,"Station":"BTS Phrom Phong","Walk (m)":732,"Group-friendly?":"Medium","Best for":"Standard after-work team dinner"},{"Restaurant Name":"Sra Bua by Kiin Kiin","Area":"Siam","Cuisine (normalized)":"Modern Thai (fine dining)","Rating":4.7,"Reviews":1076,"Price Tier":"$$$$","THB/person":2500,"Station":"BTS Siam","Walk (m)":460,"Group-friendly?":"Medium","Best for":"Special / celebration team dinner"},{"Restaurant Name":"Supanniga Eating Room","Area":"Thonglor","Cuisine (normalized)":"Thai (regional)","Rating":4.4,"Reviews":1727,"Price Tier":"$$$","THB/person":1000,"Station":"BTS Thong Lo","Walk (m)":914,"Group-friendly?":"High","Best for":"Standard after-work team dinner"},{"Restaurant Name":"Peppina (Sukhumvit 33)","Area":"Phrom Phong","Cuisine (normalized)":"Italian / pizza","Rating":4.5,"Reviews":2491,"Price Tier":"$$$","THB/person":900,"Station":"BTS/MRT Asok","Walk (m)":1042,"Group-friendly?":"High","Best for":"Standard after-work team dinner"},{"Restaurant Name":"Fuego (The Taste Thonglor)","Area":"Thonglor","Cuisine (normalized)":"Steakhouse / grill (fine)","Rating":4.8,"Reviews":622,"Price Tier":"$$$$","THB/person":2500,"Station":"BTS Thong Lo","Walk (m)":1291,"Group-friendly?":"Medium","Best for":"Special / celebration team dinner"},{"Restaurant Name":"Khao Niao","Area":"Ari","Cuisine (normalized)":"Thai / Isaan","Rating":4.6,"Reviews":295,"Price Tier":"$$","THB/person":500,"Station":"BTS Sanam Pao","Walk (m)":845,"Group-friendly?":"Medium","Best for":"Standard after-work team dinner"},{"Restaurant Name":"Chez Papa Bangkok","Area":"Phrom Phong","Cuisine (normalized)":"French / bistro","Rating":4.8,"Reviews":538,"Price Tier":"$$$$","THB/person":1200,"Station":"BTS Phrom Phong","Walk (m)":977,"Group-friendly?":"Medium","Best for":"Special / celebration team dinner"},{"Restaurant Name":"Baan Pueng Chom","Area":"Ari","Cuisine (normalized)":"Thai (home-style)","Rating":4.2,"Reviews":1625,"Price Tier":"$","THB/person":300,"Station":"BTS Ari","Walk (m)":515,"Group-friendly?":"High","Best for":"Budget casual team meal"},{"Restaurant Name":"Patara Fine Thai Cuisine","Area":"Thonglor","Cuisine (normalized)":"Thai (fine dining)","Rating":4.5,"Reviews":656,"Price Tier":"$$$$","THB/person":1400,"Station":"BTS Phrom Phong","Walk (m)":1831,"Group-friendly?":"Medium","Best for":"Special / celebration team dinner"},{"Restaurant Name":"Rossano's Italian Cuisine","Area":"Asoke","Cuisine (normalized)":"Italian","Rating":4.5,"Reviews":1137,"Price Tier":"$$$$","THB/person":1500,"Station":"BTS/MRT Asok","Walk (m)":826,"Group-friendly?":"Medium","Best for":"Special / celebration team dinner"},{"Restaurant Name":"Di Vino Bangkok","Area":"Thonglor","Cuisine (normalized)":"Italian / wine","Rating":4.7,"Reviews":384,"Price Tier":"$$$$","THB/person":1300,"Station":"BTS Thong Lo","Walk (m)":1496,"Group-friendly?":"Medium","Best for":"Special / celebration team dinner"}];
+ var DATA=FALLBACK.slice(), area="", q="", sortK="Rating", sortDir=-1;
  var $=function(s){return document.querySelector(s);};
  function num(v){var n=parseFloat(String(v).replace(/[, ]/g,''));return isNaN(n)?null:n;}
  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
@@ -161,32 +266,18 @@ footer{padding:28px 0;color:#6a838b;font-size:13px;text-align:center;background:
      "<td><span class='pill "+gc+"'>"+esc(g)+"</span></td><td>"+esc(r["Best for"])+"</td></tr>";
    }).join("");
    $("#cdbody").innerHTML=html||"<tr><td colspan='11' style='text-align:center;color:#999;padding:20px'>ไม่พบร้านในย่านนี้</td></tr>";
-   var src=live?"🟢 สดจาก Google Sheets":"📦 ข้อมูลสำรอง (snapshot)";
-   $("#cdstatus").innerHTML="<span class='cnt'>"+rows.length+"</span> ร้าน · ทั้งหมด "+DATA.length+" ร้าน · "+src;
- }
- function load(){
-   $("#cdstatus").textContent="กำลังดึงข้อมูลสด…";
-   fetch(GVIZ).then(function(r){return r.text();}).then(function(t){
-     var j=JSON.parse(t.replace(/^[\s\S]*?setResponse\(/,'').replace(/\);?\s*$/,''));
-     var cols=j.table.cols.map(function(c){return (c.label||c.id||"").trim();});
-     var rows=j.table.rows.map(function(row){var o={};(row.c||[]).forEach(function(c,i){o[cols[i]]=c?(c.f!=null?c.f:c.v):"";});return o;});
-     rows=rows.filter(function(x){return String(x["Restaurant Name"]||"").trim()!=="";});
-     if(rows.length){DATA=rows;live=true;} else {DATA=FALLBACK.slice();live=false;}
-     render();
-   }).catch(function(e){ DATA=FALLBACK.slice();live=false; render();
-     $("#cdstatus").innerHTML="ดึงสดไม่ได้ (CORS/การแชร์) — แสดงข้อมูลสำรอง · ตั้งแชร์ชีตเป็น Anyone with link: Viewer แล้วกดอีกครั้ง";
-   });
+   $("#cdstatus").innerHTML="<span class='cnt'>"+rows.length+"</span> ร้าน จากทั้งหมด "+DATA.length+" ร้าน";
  }
  document.addEventListener("click",function(e){
    if(e.target.classList&&e.target.classList.contains("chip")){
      document.querySelectorAll("#cdchips .chip").forEach(function(c){c.classList.remove("active");});
      e.target.classList.add("active"); area=e.target.getAttribute("data-area"); render();
    }
-   if(e.target.id==="cdrefresh") load();
+   if(e.target.id==="cdrefresh") render();
  });
  document.addEventListener("input",function(e){ if(e.target.id==="cdsearch"){q=e.target.value.toLowerCase();render();} });
  document.querySelectorAll("#cdtable th").forEach(function(th){th.addEventListener("click",function(){var k=th.getAttribute("data-k");if(sortK===k)sortDir*=-1;else{sortK=k;sortDir=-1;}render();});});
- render(); load();
+ render();
 })();
 </script>
 
@@ -198,153 +289,61 @@ footer{padding:28px 0;color:#6a838b;font-size:13px;text-align:center;background:
 <tr><th>#</th><th>ร้าน</th><th>ย่าน</th><th class="ce">เรตติ้ง</th><th class="ce">ราคา</th>
 <th class="ce">รีวิว/25</th><th class="ce">กลุ่ม/20</th><th class="ce">ราคา/15</th><th class="ce">เดินทาง/15</th><th class="ce">ข้อมูล/15</th><th class="ce">พิเศษ/10</th><th class="ce">รวม</th><th>เหตุผล</th></tr>
 <tr class="top3row">
-<td class="rk">🥇1</td>
-<td class="nm"><b>KORATA (Siam Square)</b><div class="sub">Thai (Korat / Isaan)</div></td>
-<td>Siam</td>
-<td class="ce"><b>4.9</b>★<div class="sub">2,537 รีวิว</div></td>
-<td class="ce">$$<div class="sub">~400฿</div></td>
-<td class="ce">23.8</td><td class="ce">17.0</td><td class="ce">15.0</td>
-<td class="ce">13.8</td><td class="ce">15.0</td><td class="ce">7.0</td>
-<td class="tot">91.6</td>
-<td class="rs">เรตติ้ง 4.9★ จาก ~2,537 รีวิว · เหมาะกลุ่มมาก · ห่าง BTS Siam ~189 ม. · ~400฿/คน</td></tr>
+<td class="rk">🥇1</td><td class="nm"><b>KORATA (Siam Square)</b><div class="sub">Thai (Korat / Isaan)</div></td>
+<td>Siam</td><td class="ce"><b>4.9</b>★<div class="sub">2,537</div></td><td class="ce">$$<div class="sub">~400฿</div></td>
+<td class="ce">23.8</td><td class="ce">17.0</td><td class="ce">15.0</td><td class="ce">13.8</td><td class="ce">15.0</td><td class="ce">7.0</td>
+<td class="tot">91.6</td><td class="rs">เรตติ้ง 4.9★ · เหมาะกลุ่มมาก · BTS Siam ~189 ม. · ~400฿/คน</td></tr>
 <tr class="top3row">
-<td class="rk">🥈2</td>
-<td class="nm"><b>White Flower Factory (Siam Square)</b><div class="sub">Thai / fusion</div></td>
-<td>Siam</td>
-<td class="ce"><b>4.6</b>★<div class="sub">1,521 รีวิว</div></td>
-<td class="ce">$$<div class="sub">~500฿</div></td>
-<td class="ce">20.2</td><td class="ce">17.0</td><td class="ce">15.0</td>
-<td class="ce">15.0</td><td class="ce">15.0</td><td class="ce">6.5</td>
-<td class="tot">88.7</td>
-<td class="rs">เรตติ้ง 4.6★ จาก ~1,521 รีวิว · เหมาะกลุ่มมาก · ห่าง BTS Siam ~50 ม. · ~500฿/คน</td></tr>
+<td class="rk">🥈2</td><td class="nm"><b>White Flower Factory (Siam Square)</b><div class="sub">Thai / fusion</div></td>
+<td>Siam</td><td class="ce"><b>4.6</b>★<div class="sub">1,521</div></td><td class="ce">$$<div class="sub">~500฿</div></td>
+<td class="ce">20.2</td><td class="ce">17.0</td><td class="ce">15.0</td><td class="ce">15.0</td><td class="ce">15.0</td><td class="ce">6.5</td>
+<td class="tot">88.7</td><td class="rs">เรตติ้ง 4.6★ · เหมาะกลุ่มมาก · BTS Siam ~50 ม. · ~500฿/คน</td></tr>
 <tr class="top3row">
-<td class="rk">🥉3</td>
-<td class="nm"><b>Kopihub Prime (Ari)</b><div class="sub">Dim sum / Asian</div></td>
-<td>Ari</td>
-<td class="ce"><b>4.8</b>★<div class="sub">3,430 รีวิว</div></td>
-<td class="ce">$<div class="sub">~300฿</div></td>
-<td class="ce">22.6</td><td class="ce">17.0</td><td class="ce">12.0</td>
-<td class="ce">15.0</td><td class="ce">15.0</td><td class="ce">7.0</td>
-<td class="tot">88.6</td>
-<td class="rs">เรตติ้ง 4.8★ จาก ~3,430 รีวิว · เหมาะกลุ่มมาก · ห่าง BTS Ari ~139 ม. · ~300฿/คน</td></tr>
+<td class="rk">🥉3</td><td class="nm"><b>Kopihub Prime (Ari)</b><div class="sub">Dim sum / Asian</div></td>
+<td>Ari</td><td class="ce"><b>4.8</b>★<div class="sub">3,430</div></td><td class="ce">$<div class="sub">~300฿</div></td>
+<td class="ce">22.6</td><td class="ce">17.0</td><td class="ce">12.0</td><td class="ce">15.0</td><td class="ce">15.0</td><td class="ce">7.0</td>
+<td class="tot">88.6</td><td class="rs">เรตติ้ง 4.8★ · เหมาะกลุ่มมาก · BTS Ari ~139 ม. · ~300฿/คน</td></tr>
 <tr>
-<td class="rk">4</td>
-<td class="nm"><b>Indulge Restaurant &amp; Cocktail Bar</b><div class="sub">Thai / fusion / cocktail</div></td>
-<td>Asoke</td>
-<td class="ce"><b>4.7</b>★<div class="sub">3,693 รีวิว</div></td>
-<td class="ce">$$$<div class="sub">~900฿</div></td>
-<td class="ce">21.4</td><td class="ce">17.0</td><td class="ce">12.8</td>
-<td class="ce">13.8</td><td class="ce">15.0</td><td class="ce">8.5</td>
-<td class="tot">88.5</td>
-<td class="rs">เรตติ้ง 4.7★ จาก ~3,693 รีวิว · เหมาะกลุ่มมาก · ห่าง BTS/MRT Asok ~269 ม. · ~900฿/คน</td></tr>
+<td class="rk">4</td><td class="nm"><b>Indulge Restaurant &amp; Cocktail Bar</b><div class="sub">Thai / fusion / cocktail</div></td>
+<td>Asoke</td><td class="ce"><b>4.7</b>★<div class="sub">3,693</div></td><td class="ce">$$$<div class="sub">~900฿</div></td>
+<td class="ce">21.4</td><td class="ce">17.0</td><td class="ce">12.8</td><td class="ce">13.8</td><td class="ce">15.0</td><td class="ce">8.5</td>
+<td class="tot">88.5</td><td class="rs">เรตติ้ง 4.7★ · เหมาะกลุ่มมาก · BTS/MRT Asok ~269 ม. · ~900฿/คน</td></tr>
 <tr>
-<td class="rk">5</td>
-<td class="nm"><b>Lucca Thonglor (rooftop)</b><div class="sub">Mediterranean / rooftop / brunch</div></td>
-<td>Thonglor</td>
-<td class="ce"><b>4.9</b>★<div class="sub">831 รีวิว</div></td>
-<td class="ce">$$<div class="sub">~400฿</div></td>
-<td class="ce">23.8</td><td class="ce">17.0</td><td class="ce">15.0</td>
-<td class="ce">8.7</td><td class="ce">15.0</td><td class="ce">8.5</td>
-<td class="tot">88.0</td>
-<td class="rs">เรตติ้ง 4.9★ จาก ~831 รีวิว · เหมาะกลุ่มมาก · ห่าง BTS Thong Lo ~942 ม. · ~400฿/คน</td></tr>
+<td class="rk">5</td><td class="nm"><b>Lucca Thonglor (rooftop)</b><div class="sub">Mediterranean / rooftop</div></td>
+<td>Thonglor</td><td class="ce"><b>4.9</b>★<div class="sub">831</div></td><td class="ce">$$<div class="sub">~400฿</div></td>
+<td class="ce">23.8</td><td class="ce">17.0</td><td class="ce">15.0</td><td class="ce">8.7</td><td class="ce">15.0</td><td class="ce">8.5</td>
+<td class="tot">88.0</td><td class="rs">เรตติ้ง 4.9★ · เหมาะกลุ่มมาก · BTS Thong Lo ~942 ม. · ~400฿/คน</td></tr>
 <tr>
-<td class="rk">6</td>
-<td class="nm"><b>Kenny's BKK (Ari)</b><div class="sub">American / pizza</div></td>
-<td>Ari</td>
-<td class="ce"><b>4.7</b>★<div class="sub">1,240 รีวิว</div></td>
-<td class="ce">$$<div class="sub">~500฿</div></td>
-<td class="ce">21.4</td><td class="ce">17.0</td><td class="ce">15.0</td>
-<td class="ce">12.3</td><td class="ce">15.0</td><td class="ce">6.5</td>
-<td class="tot">87.2</td>
-<td class="rs">เรตติ้ง 4.7★ จาก ~1,240 รีวิว · เหมาะกลุ่มมาก · ห่าง BTS Ari ~448 ม. · ~500฿/คน</td></tr>
+<td class="rk">6</td><td class="nm"><b>Kenny's BKK (Ari)</b><div class="sub">American / pizza</div></td>
+<td>Ari</td><td class="ce"><b>4.7</b>★<div class="sub">1,240</div></td><td class="ce">$$<div class="sub">~500฿</div></td>
+<td class="ce">21.4</td><td class="ce">17.0</td><td class="ce">15.0</td><td class="ce">12.3</td><td class="ce">15.0</td><td class="ce">6.5</td>
+<td class="tot">87.2</td><td class="rs">เรตติ้ง 4.7★ · เหมาะกลุ่มมาก · BTS Ari ~448 ม. · ~500฿/คน</td></tr>
 <tr>
-<td class="rk">7</td>
-<td class="nm"><b>Nara Thai Cuisine (Terminal 21)</b><div class="sub">Thai</div></td>
-<td>Asoke</td>
-<td class="ce"><b>4.7</b>★<div class="sub">1,135 รีวิว</div></td>
-<td class="ce">$$$<div class="sub">~800฿</div></td>
-<td class="ce">21.4</td><td class="ce">17.0</td><td class="ce">12.8</td>
-<td class="ce">13.8</td><td class="ce">15.0</td><td class="ce">7.0</td>
-<td class="tot">87.0</td>
-<td class="rs">เรตติ้ง 4.7★ จาก ~1,135 รีวิว · เหมาะกลุ่มมาก · ห่าง BTS/MRT Asok ~184 ม. · ~800฿/คน</td></tr>
+<td class="rk">7</td><td class="nm"><b>Nara Thai Cuisine (Terminal 21)</b><div class="sub">Thai</div></td>
+<td>Asoke</td><td class="ce"><b>4.7</b>★<div class="sub">1,135</div></td><td class="ce">$$$<div class="sub">~800฿</div></td>
+<td class="ce">21.4</td><td class="ce">17.0</td><td class="ce">12.8</td><td class="ce">13.8</td><td class="ce">15.0</td><td class="ce">7.0</td>
+<td class="tot">87.0</td><td class="rs">เรตติ้ง 4.7★ · เหมาะกลุ่มมาก · BTS/MRT Asok ~184 ม. · ~800฿/คน</td></tr>
 <tr>
-<td class="rk">8</td>
-<td class="nm"><b>Gigi Eatery Asoke</b><div class="sub">Italian / brunch</div></td>
-<td>Asoke</td>
-<td class="ce"><b>4.8</b>★<div class="sub">3,341 รีวิว</div></td>
-<td class="ce">$$$<div class="sub">~900฿</div></td>
-<td class="ce">22.6</td><td class="ce">17.0</td><td class="ce">12.8</td>
-<td class="ce">12.3</td><td class="ce">15.0</td><td class="ce">7.0</td>
-<td class="tot">86.7</td>
-<td class="rs">เรตติ้ง 4.8★ จาก ~3,341 รีวิว · เหมาะกลุ่มมาก · ห่าง BTS/MRT Asok ~401 ม. · ~900฿/คน</td></tr>
+<td class="rk">8</td><td class="nm"><b>Gigi Eatery Asoke</b><div class="sub">Italian / brunch</div></td>
+<td>Asoke</td><td class="ce"><b>4.8</b>★<div class="sub">3,341</div></td><td class="ce">$$$<div class="sub">~900฿</div></td>
+<td class="ce">22.6</td><td class="ce">17.0</td><td class="ce">12.8</td><td class="ce">12.3</td><td class="ce">15.0</td><td class="ce">7.0</td>
+<td class="tot">86.7</td><td class="rs">เรตติ้ง 4.8★ · เหมาะกลุ่มมาก · BTS/MRT Asok ~401 ม. · ~900฿/คน</td></tr>
 <tr>
-<td class="rk">9</td>
-<td class="nm"><b>Lay Lao</b><div class="sub">Thai / Isaan seafood</div></td>
-<td>Ari</td>
-<td class="ce"><b>4.5</b>★<div class="sub">2,458 รีวิว</div></td>
-<td class="ce">$$<div class="sub">~500฿</div></td>
-<td class="ce">19.0</td><td class="ce">18.0</td><td class="ce">15.0</td>
-<td class="ce">12.3</td><td class="ce">15.0</td><td class="ce">7.0</td>
-<td class="tot">86.3</td>
-<td class="rs">เรตติ้ง 4.5★ จาก ~2,458 รีวิว · เหมาะกลุ่มมาก · ห่าง BTS Ari ~376 ม. · ~500฿/คน</td></tr>
+<td class="rk">9</td><td class="nm"><b>Lay Lao</b><div class="sub">Thai / Isaan seafood</div></td>
+<td>Ari</td><td class="ce"><b>4.5</b>★<div class="sub">2,458</div></td><td class="ce">$$<div class="sub">~500฿</div></td>
+<td class="ce">19.0</td><td class="ce">18.0</td><td class="ce">15.0</td><td class="ce">12.3</td><td class="ce">15.0</td><td class="ce">7.0</td>
+<td class="tot">86.3</td><td class="rs">เรตติ้ง 4.5★ · เหมาะกลุ่มมาก · BTS Ari ~376 ม. · ~500฿/คน</td></tr>
 <tr>
-<td class="rk">10</td>
-<td class="nm"><b>Sunrise Tacos Mexican Grill</b><div class="sub">Mexican</div></td>
-<td>Asoke</td>
-<td class="ce"><b>4.7</b>★<div class="sub">5,004 รีวิว</div></td>
-<td class="ce">$<div class="sub">~300฿</div></td>
-<td class="ce">21.4</td><td class="ce">17.0</td><td class="ce">12.0</td>
-<td class="ce">13.8</td><td class="ce">15.0</td><td class="ce">6.5</td>
-<td class="tot">85.7</td>
-<td class="rs">เรตติ้ง 4.7★ จาก ~5,004 รีวิว · เหมาะกลุ่มมาก · ห่าง BTS/MRT Asok ~188 ม. · ~300฿/คน</td></tr>
+<td class="rk">10</td><td class="nm"><b>Sunrise Tacos Mexican Grill</b><div class="sub">Mexican</div></td>
+<td>Asoke</td><td class="ce"><b>4.7</b>★<div class="sub">5,004</div></td><td class="ce">$<div class="sub">~300฿</div></td>
+<td class="ce">21.4</td><td class="ce">17.0</td><td class="ce">12.0</td><td class="ce">13.8</td><td class="ce">15.0</td><td class="ce">6.5</td>
+<td class="tot">85.7</td><td class="rs">เรตติ้ง 4.7★ · เหมาะกลุ่มมาก · BTS/MRT Asok ~188 ม. · ~300฿/คน</td></tr>
 </table></div>
 </section>
 
-<!-- SECTION 2: Top 3 -->
+<!-- SECTION 2: เปรียบเทียบ -->
 <section>
-<h2><span class="n">2</span>แนะนำ Top 3 🏆</h2>
-<p class="lead">3 ร้านที่เหมาะที่สุดสำหรับมื้อทีม — ตัดสินใจได้ทันที</p>
-<div class="cards">
-<div class="card">
-<div class="cardtop"><span class="badge">🥇 อันดับ 1</span><span class="score">91.6<small>/100</small></span></div>
-<h3>KORATA (Siam Square)</h3>
-<div class="meta">Siam · Thai (Korat / Isaan)</div>
-<div class="stars">4.9★ <span>(2,537 รีวิว)</span> · $$ ~400฿/คน</div>
-<p class="why">เรตติ้ง 4.9★ จาก 2,537 รีวิวจริง · เมนูแชร์ได้เหมาะกับกลุ่ม 8–12 คน · งบ ~400฿/คน · เดินจาก BTS Siam ~189 ม.</p>
-<div class="links">
-<a href="https://www.google.com/maps/search/?api=1&query=&query_place_id=ChIJ0xYxXwCf4jARPtJNOp_WXm8" target="_blank">Google Maps ↗</a>
-<a href="https://openlink.co/korata_th" target="_blank">Website ↗</a>
-</div>
-</div>
-<div class="card">
-<div class="cardtop"><span class="badge">🥈 อันดับ 2</span><span class="score">88.7<small>/100</small></span></div>
-<h3>White Flower Factory (Siam Square)</h3>
-<div class="meta">Siam · Thai / fusion</div>
-<div class="stars">4.6★ <span>(1,521 รีวิว)</span> · $$ ~500฿/คน</div>
-<p class="why">เรตติ้ง 4.6★ จาก 1,521 รีวิวจริง · เมนูแชร์ได้เหมาะกับกลุ่ม 8–12 คน · งบ ~500฿/คน · เดินจาก BTS Siam ~50 ม.</p>
-<div class="links">
-<a href="https://www.google.com/maps/search/?api=1&query=&query_place_id=ChIJ937RdtKe4jARPRuzBAQLNxc" target="_blank">Google Maps ↗</a>
-<a href="https://lin.ee/apXJZm3" target="_blank">Website ↗</a>
-</div>
-</div>
-<div class="card">
-<div class="cardtop"><span class="badge">🥉 อันดับ 3</span><span class="score">88.6<small>/100</small></span></div>
-<h3>Kopihub Prime (Ari)</h3>
-<div class="meta">Ari · Dim sum / Asian</div>
-<div class="stars">4.8★ <span>(3,430 รีวิว)</span> · $ ~300฿/คน</div>
-<p class="why">เรตติ้ง 4.8★ จาก 3,430 รีวิวจริง · เมนูแชร์ได้เหมาะกับกลุ่ม 8–12 คน · งบ ~300฿/คน · เดินจาก BTS Ari ~139 ม.</p>
-<div class="links">
-<a href="https://www.google.com/maps/search/?api=1&query=&query_place_id=ChIJgdqs_tuf4jARl5VCETZn0do" target="_blank">Google Maps ↗</a>
-<a href="https://kopihub.co/" target="_blank">Website ↗</a>
-</div>
-</div>
-</div>
-</section>
-
-<!-- SECTION 3: เปรียบเทียบ -->
-<section>
-<h2><span class="n">3</span>เปรียบเทียบร้านเด่น — จุดเด่น vs ข้อควรระวัง</h2>
-<p class="lead">ทุกร้านมี trade-off ที่ทีมควรรู้ก่อนจอง</p>
+<h2><span class="n">2</span>เปรียบเทียบร้านเด่น — จุดเด่น vs ข้อควรระวัง</h2>
 <div class="scroll"><table class="crit">
 <tr><th>ร้าน (ย่าน · คะแนน)</th><th>จุดเด่น</th><th>ข้อควรระวัง</th></tr>
 <tr><td class="nm"><b>KORATA (Siam Square)</b><div class="sub">Siam · 91.6/100</div></td>
@@ -357,7 +356,7 @@ footer{padding:28px 0;color:#6a838b;font-size:13px;text-align:center;background:
 <td class="good">✔ เรตติ้งสูงมาก 4.8★ · ฐานรีวิวใหญ่ (3,430) · เมนูแชร์ได้ · ราคาถูกสุด (~300฿/คน) · ติด BTS Ari</td>
 <td class="warn">⚠ ช่วงพีคควรจองล่วงหน้า</td></tr>
 <tr><td class="nm"><b>Indulge Restaurant &amp; Cocktail Bar</b><div class="sub">Asoke · 88.5/100</div></td>
-<td class="good">✔ เรตติ้งสูงมาก 4.7★ · ฐานรีวิวใหญ่ (3,693) · เมนูแชร์ได้ · มีบาร์ เหมาะงานฉลอง · ติด BTS/MRT Asok</td>
+<td class="good">✔ เรตติ้งสูงมาก 4.7★ · ฐานรีวิวใหญ่ (3,693) · มีบาร์ เหมาะงานฉลอง · ติด BTS/MRT Asok</td>
 <td class="warn">⚠ ราคาสูงกว่า (~900฿/คน) · ควรจองล่วงหน้า</td></tr>
 <tr><td class="nm"><b>Lucca Thonglor (rooftop)</b><div class="sub">Thonglor · 88.0/100</div></td>
 <td class="good">✔ เรตติ้งสูงมาก 4.9★ · Rooftop วิวสวย · เมนูแชร์ได้ · ราคาคุ้ม</td>
@@ -368,10 +367,9 @@ footer{padding:28px 0;color:#6a838b;font-size:13px;text-align:center;background:
 </table></div>
 </section>
 
-
-<!-- SECTION 4: เกณฑ์การให้คะแนน -->
+<!-- SECTION 3: เกณฑ์การให้คะแนน -->
 <section>
-<h2><span class="n">4</span>เกณฑ์การให้คะแนน (100 คะแนน)</h2>
+<h2><span class="n">3</span>เกณฑ์การให้คะแนน (100 คะแนน)</h2>
 <p class="lead">6 หมวดคะแนน พร้อมน้ำหนักที่กำหนดไว้</p>
 <div class="weights">
 <div class="wt"><div class="p">25</div><div class="l">Rating &amp; Review Quality<br>คุณภาพคะแนน / รีวิว</div></div>
